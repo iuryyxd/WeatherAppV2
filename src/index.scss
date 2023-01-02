@@ -1,0 +1,46 @@
+:root {
+
+  /* Colors */
+
+  --color-gray: #6E707A;
+  --color-gray-2: #88869D;
+  --color-gray-3: #A09FB1;
+  --color-gray-4: #585676;
+  --color-blue: #3C47E9;
+  --color-blue-2: #1E213A;
+  --color-blue-3: #100E1D;
+  --color-blue-4: #110E3C;
+  --color-yellow: #FFEC65;
+  --color-light: #E7E7EB;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--color-blue-3);
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+input {
+  outline: none;
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+ul,
+li {
+  list-style: none;
+}
