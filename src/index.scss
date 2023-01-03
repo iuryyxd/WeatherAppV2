@@ -1,17 +1,16 @@
 :root {
-
   /* Colors */
 
-  --color-gray: #6E707A;
-  --color-gray-2: #88869D;
-  --color-gray-3: #A09FB1;
+  --color-gray: #6e707a;
+  --color-gray-2: #88869d;
+  --color-gray-3: #a09fb1;
   --color-gray-4: #585676;
-  --color-blue: #3C47E9;
-  --color-blue-2: #1E213A;
-  --color-blue-3: #100E1D;
-  --color-blue-4: #110E3C;
-  --color-yellow: #FFEC65;
-  --color-light: #E7E7EB;
+  --color-blue: #3c47e9;
+  --color-blue-2: #1e213a;
+  --color-blue-3: #100e1d;
+  --color-blue-4: #110e3c;
+  --color-yellow: #ffec65;
+  --color-light: #e7e7eb;
 
   -webkit-font-smoothing: antialiased;
 }
@@ -23,6 +22,7 @@
 }
 
 body {
+  font-family: "Raleway", sans-serif;
   background: var(--color-blue-3);
 }
 
@@ -43,4 +43,11 @@ button:hover {
 ul,
 li {
   list-style: none;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
 }

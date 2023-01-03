@@ -1,0 +1,216 @@
+.aside {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(
+      rgba(30, 33, 58, 0.95) 100%,
+      rgba(30, 33, 58, 0.95) 0
+    ),
+    url(../../assets/Cloud-background.png) no-repeat;
+  background-position: 50% 20%;
+  background-size: 150%;
+  position: relative;
+  padding: 42px 46px;
+
+  &__header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6.8125rem;
+
+    .header__searchButton {
+      width: 10.0625rem;
+      height: 2.5rem;
+      background: var(--color-gray);
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+      font-weight: 500;
+      font-size: 1rem;
+      line-height: 1.1875rem;
+      color: var(--color-light);
+    }
+
+    .header__getMyLocationButton {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 2.5rem;
+      height: 2.5rem;
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+      color: var(--color-light);
+      font-size: 1.375rem;
+    }
+  }
+
+  &__main {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .main__img {
+      width: 100%;
+      margin-bottom: 5.4375rem;
+    }
+
+    .main__temperature {
+      font-weight: 500;
+      font-size: 9rem;
+      color: var(--color-light);
+      margin-bottom: 5.4375rem;
+
+      span {
+        font-weight: 300;
+        font-size: 3rem;
+        color: #a09fb1;
+      }
+    }
+
+    .main__weather {
+      font-weight: 600;
+      font-size: 2.25rem;
+      line-height: 2.625rem;
+      text-align: center;
+      color: #a09fb1;
+      margin-bottom: 5.4375rem;
+    }
+
+    .main__date {
+      font-weight: 500;
+      font-size: 1.125rem;
+      line-height: 1.3125rem;
+      color: #88869d;
+      margin-bottom: 2rem;
+    }
+
+    .main__local {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-weight: 600;
+      font-size: 1.125rem;
+      line-height: 1.3125rem;
+      color: #88869d;
+
+      svg {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  &__search {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #1e213a;
+    padding: 19px 46px;
+
+    .search__header {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 2.8125rem;
+      margin-bottom: 3.625rem;
+
+      svg:first-child {
+        align-self: flex-end;
+        color: var(--color-light);
+        font-size: 2rem;
+        cursor: pointer;
+      }
+
+      .search__form {
+        width: 100%;
+        height: 3rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+
+        .search__input {
+          width: 100%;
+          height: 100%;
+          position: relative;
+
+          svg {
+            position: absolute;
+            left: 15px;
+            top: 12px;
+            font-size: 1.5rem;
+            color: #616475;
+          }
+
+          input {
+            width: 100%;
+            height: 100%;
+
+            background: none;
+            padding-inline: 49px 10px;
+            border: 1px solid #e7e7eb;
+
+            font-weight: 500;
+            font-size: 1rem;
+            line-height: 1.1875rem;
+            color: var(--color-light);
+          }
+
+          ::placeholder {
+            color: #616475;
+          }
+        }
+
+        button {
+          width: 86px;
+          background: #3c47e9;
+          font-weight: 600;
+          font-size: 1rem;
+          color: #e7e7eb;
+        }
+      }
+    }
+
+    .search__main {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 4.5rem;
+
+      .search__option {
+        width: 100%;
+        height: 64px;
+        padding-inline: 15px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 1.1875rem;
+        color: #e7e7eb;
+
+        cursor: pointer;
+
+        svg {
+          display: none;
+        }
+
+        &:hover {
+          border: 1px solid #616475;
+
+          svg {
+            display: block;
+            color: #616475;
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+}
