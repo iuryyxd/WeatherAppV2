@@ -1,4 +1,4 @@
-import styles from "./Slidebar.module.scss";
+import styles from "./Sidebar.module.scss";
 import {
   MdGpsFixed,
   MdLocationPin,
@@ -7,10 +7,18 @@ import {
   MdSearch
 } from "react-icons/md";
 import img from "../../assets/Shower.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Sidebar() {
   const [searchScreen, setSearchScreen] = useState(false);
+
+  useEffect(() => {
+    if(searchScreen && window.innerWidth <= 900) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [searchScreen])
 
   return (
     <aside className={styles.aside}>

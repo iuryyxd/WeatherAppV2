@@ -21,24 +21,35 @@ function Main() {
       </header>
 
       <div className={styles.main__highlights}>
-        <h1>Destaques de hoje</h1>
+        <h1 className={styles.highlights__title}>Destaques de hoje</h1>
 
-        <div>
-          <div>
+        <div className={styles.highlights__grid}>
+          <div className={styles.grid__wind}>
             <h1>Velocidade do vento</h1>
             <p>7<span>km/h</span></p>
+            <p>ou 4,3mph</p>
           </div>
 
-          <div>
+          <div className={styles.grid__humidity}>
             <h1>Umidade</h1>
-            <p>84<span>%</span></p>
-            <div>
-              <div>
+            <p className={styles.humidity__percentage}>84<span>%</span></p>
+            <div className={styles.humidity__bar}>
+              <div className={styles.bar__numbers}>
                 <p>0</p><p>50</p><p>100</p>
               </div>
-              <div></div>
-              <p>%</p>
+              <div className={styles.bar__slide}><div></div></div>
+              <p className={styles.bar__percentage}>%</p>
             </div>
+          </div>
+
+          <div className={styles.grid__visibility}>
+            <h1>Visibilidade</h1>
+            <p>10<span>km</span></p>
+          </div>
+
+          <div className={styles.grid__airPressure}>
+            <h1>Pressão do ar</h1>
+            <p>998<span>mb</span></p>
           </div>
         </div>
       </div>
