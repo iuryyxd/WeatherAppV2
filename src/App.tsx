@@ -24,7 +24,6 @@ function App() {
     axios
       .get(url)
       .then(({ data }) => {
-        console.log(data)
         setCurrentWeather({
           local: city,
           temperature: {
@@ -44,7 +43,7 @@ function App() {
   };
 
   const handleGetForecastWeather = (lat: number, lon: number) => {
-    const url = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${
+    const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${
       import.meta.env.VITE_WEATHER_API_KEY
     }`;
     axios

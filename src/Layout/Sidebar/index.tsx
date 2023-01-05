@@ -51,7 +51,7 @@ function Sidebar({ currentWeather, getUserLocation, handleGetForecastWeather, ha
   }, [searchScreen]);
 
   const handleGetCities = () => {
-    const url = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${
+    const url = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${
       import.meta.env.VITE_WEATHER_API_KEY
     }`;
     axios
