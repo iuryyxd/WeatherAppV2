@@ -124,7 +124,7 @@ function Sidebar({ currentWeather, getUserLocation, handleGetForecastWeather, ha
 
           <main className={styles.search__main}>
             {cities.map((city) => (
-              <div className={styles.search__option} onClick={() => {
+              <div key={crypto.randomUUID()} className={styles.search__option} onClick={() => {
                 handleGetCurrentWeather(city.lat, city.lon, city.name)
                 handleGetForecastWeather(city.lat, city.lon)
               }}>

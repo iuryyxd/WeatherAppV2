@@ -25,7 +25,7 @@ function App() {
       .get(url)
       .then(({ data }) => {
         setCurrentWeather({
-          local: city,
+          local: city ? city : data.name,
           temperature: {
             metric: Math.round(data.main.temp),
           },
