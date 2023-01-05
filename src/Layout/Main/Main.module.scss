@@ -18,13 +18,18 @@
       .header__buttonCelsius {
         width: 40px;
         height: 40px;
-        background: #e7e7eb;
+        background: #585676;
         border-radius: 54px;
 
         font-weight: 700;
         font-size: 18px;
         line-height: 21px;
-        color: #110e3c;
+        color: #e7e7eb;
+
+        &.celsius {
+          background: #e7e7eb;
+          color: #110e3c;
+        }
       }
 
       .header__buttonFahrenheit {
@@ -37,6 +42,11 @@
         font-size: 18px;
         line-height: 21px;
         color: #e7e7eb;
+
+        &.fahrenheit {
+          background: #e7e7eb;
+          color: #110e3c;
+        }
       }
     }
 
