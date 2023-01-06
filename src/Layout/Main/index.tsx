@@ -4,6 +4,8 @@ import { CurrentWeatherType, ForecastWeatherType } from "../../Types/mainTypes";
 import { useContext } from "react";
 import UnitsContext from "../../Contexts/UnitsContext";
 import { toFahrenheit } from "../../Utils/convertCelsiusToFahrenheit";
+import { motion } from "framer-motion";
+import { mainAnimation } from "../../Animations/animations";
 
 interface MainProps {
   currentWeather: CurrentWeatherType | undefined;
@@ -14,7 +16,13 @@ function Main({ currentWeather, forecastWeather }: MainProps) {
   const { unitType, setUnitType } = useContext(UnitsContext);
 
   return (
-    <main className={styles.main}>
+    <motion.main
+      className={styles.main}
+      variants={mainAnimation}
+      initial="initial"
+      animate="animate"
+      transition={{ duration: 1 }}
+    >
       <header className={styles.main__header}>
         <div className={styles.header__buttons}>
           <button
@@ -111,7 +119,7 @@ function Main({ currentWeather, forecastWeather }: MainProps) {
           </div>
         </div>
       </div>
-    </main>
+    </motion.main>
   );
 }
 

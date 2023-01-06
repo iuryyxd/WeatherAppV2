@@ -3,7 +3,12 @@ import Main from "./Layout/Main";
 import Sidebar from "./Layout/Sidebar";
 import styles from "./App.module.scss";
 import { useEffect, useState } from "react";
-import { CurrentWeatherType, ForecastWeatherDataType, ForecastWeatherType, PositionType } from "./Types/mainTypes";
+import {
+  CurrentWeatherType,
+  ForecastWeatherDataType,
+  ForecastWeatherType,
+  PositionType,
+} from "./Types/mainTypes";
 import { convertIcon } from "./Utils/convertIconToImage";
 import { convertDateToString } from "./Utils/convertDateToString";
 import { toast, ToastContainer } from "react-toastify";
@@ -14,8 +19,10 @@ function App() {
   const forecastIndexes = [4, 12, 20, 28, 36];
 
   const [currentWeather, setCurrentWeather] = useState<CurrentWeatherType>();
-  const [forecastWeather, setForecastWeather] = useState<ForecastWeatherType[]>([]);
-  const [unitType, setUnitType] = useState<string | null>('celsius')
+  const [forecastWeather, setForecastWeather] = useState<ForecastWeatherType[]>(
+    []
+  );
+  const [unitType, setUnitType] = useState<string | null>("celsius");
 
   const handleGetCurrentWeather = (lat: number, lon: number, city?: string) => {
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&lang=pt&units=metric&appid=${
@@ -74,7 +81,7 @@ function App() {
   };
 
   useEffect(() => {
-    handleGetCurrentWeather(-12.9822499, -38.4812772, 'Salvador');
+    handleGetCurrentWeather(-12.9822499, -38.4812772, "Salvador");
     handleGetForecastWeather(-12.9822499, -38.4812772);
   }, []);
 
@@ -102,7 +109,7 @@ function App() {
     };
 
     const errorCallback = () => {
-      toast.error('Não foi possível obter informações do seu local.', {
+      toast.error("Não foi possível obter informações do seu local.", {
         position: "top-right",
         autoClose: 900,
         hideProgressBar: false,
@@ -111,7 +118,7 @@ function App() {
         draggable: true,
         progress: undefined,
         theme: "dark",
-        });
+      });
     };
 
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
@@ -119,14 +126,17 @@ function App() {
 
   return (
     <div className={styles.app}>
-      <UnitsContext.Provider value={{unitType, setUnitType}}>
+      <UnitsContext.Provider value={{ unitType, setUnitType }}>
         <Sidebar
           currentWeather={currentWeather}
           getUserLocation={getUserLocation}
           handleGetForecastWeather={handleGetForecastWeather}
           handleGetCurrentWeather={handleGetCurrentWeather}
         />
-        <Main currentWeather={currentWeather} forecastWeather={forecastWeather}/>
+        <Main
+          currentWeather={currentWeather}
+          forecastWeather={forecastWeather}
+        />
 
         <ToastContainer
           position="top-right"
